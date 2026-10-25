@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - My Website</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: left;
+        }
+
+        /* PDF Link */
+        .pdf-link {
+            color: blue;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        /* Fullscreen Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+        }
+
+        /* Close Button */
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* PDF iframe */
+        .modal iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+
+  <h1>  <a class="pdf-link" onclick="openPDF('practical 12 correct.pdf')">practical 12 correct.pdf</a></h1>
+    <h1>  <a class="pdf-link" onclick="openPDF('practical 11 Iot.pdf')">practical 11 Iot.pdf</a></h1>
+    <h1>  <a class="pdf-link" onclick="openPDF('Controlling Raspberry Pi  using Telegram  Installation Manual_PY.pdf')">Controlling Raspberry Pi  using Telegram  Installation Manual_PY</a></h1>
+    <h1>  <a class="pdf-link" onclick="openPDF('Design a web dashboard using Flask. Control relay module via web.pdf')">Design a web dashboard using Flask. Control relay module via web.pdf</a></h1>
+    <h1>  <a class="pdf-link" onclick="openPDF('Design and implement an embedded access-control.pdf')">Design and implement an embedded access-control.pdf</a></h1>
+    <h1>  <a class="pdf-link" onclick="openPDF('Display Time over 4 digit 7 segment display.pdf')">Display Time over 4 digit 7 segment display.pdf</a></h1>
+    <h1>  <a class="pdf-link" onclick="openPDF('practical 13 IoT.pdf')">practical 13 IoT.pdf</a></h1>
+    <h1>  <a class="pdf-link" onclick="openPDF('practical 18 IoT.pdf')">practical 18 IoT.pdf</a></h1>
+    <h1>  <a class="pdf-link" onclick="openPDF('practical 19 IoT.pdf')">practical 19 IoT.pdf</a></h1>
+    <h1>  <a class="pdf-link" onclick="openPDF('simulate a fingerprint-authenticated door-lock system.pdf')">simulate a fingerprint-authenticated door-lock system.pdf</a></h1>
+
+    <h1>  <a class="pdf-link" onclick="openPDF('')"></a><h1>    
+    <div id="pdfModal" class="modal">
+        <span class="close-btn" onclick="closePDF()">&times;</span>
+        <iframe id="pdfFrame"></iframe>
+    </div>
+
+    <script>
+        function openPDF(filePath) {
+            document.getElementById("pdfFrame").src = filePath;
+            document.getElementById("pdfModal").style.display = "block";
+        }
+
+        function closePDF() {
+            document.getElementById("pdfModal").style.display = "none";
+            document.getElementById("pdfFrame").src = "";
+        }
+    </script>
+
+</body>
+</html>
